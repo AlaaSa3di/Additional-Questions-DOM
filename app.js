@@ -17,28 +17,17 @@ imges.style.width = "100px", height = "auto";
 }
 
 ///////////////////////////////Q2///////////////////////////
-const arrayInput = document.getElementById('arrayInput');
-const numberInput = document.getElementById('numberInput');
-const findButton = document.getElementById('findButton');
-const output = document.getElementById('output');
+let num = prompt("Enetr Number");
+let arr = [10, 15, 12, 17,20];
 
-function findIndex(arr, num) {
-    const index = arr.indexOf(num); 
-    return index !== -1 ? index : -1; 
+function equal(arr, num) {
+  for (let i = 0; i < arr.length; i++) {
+    if (num == arr[i]) 
+        return i;
+  }
+  return -1;
 }
 
-findButton.addEventListener('click', () => {
-    const array = arrayInput.value.split(',').map(Number);
-    const number = parseFloat(numberInput.value);
-
-    const result = findIndex(array, number);
-    if (result !== -1) {
-        output.textContent = `the index of number: ${result}`;
-    } else {
-        output.textContent = `the number cannot be found: ${result}`;
-    }
-});
-
-
+console.log(equal(arr, num));
 
 
